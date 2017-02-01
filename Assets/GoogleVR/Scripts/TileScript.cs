@@ -2,12 +2,13 @@
 using System.Collections;
 
 public class TileScript : MonoBehaviour {
+	
 	public int col;
 	private bool isOn;
-	public AudioSource sound;
 	private float TimeToFlash;
 	private float TimeSinceStart;
 	private MeshRenderer tile_renderer;
+	private AudioSource source;
 	
 
 	// Use this for initialization
@@ -16,6 +17,9 @@ public class TileScript : MonoBehaviour {
 		TimeSinceStart = -col/5f;
 		TimeToFlash = 0f;
 		tile_renderer = GetComponent<MeshRenderer> ();
+		source = GetComponent<AudioSource> ();
+		AudioSource[] sources = GameObject.FindSceneObjectsOfType(typeof(AudioSource)) as AudioSource[];
+		Debug.Log (sources);
 	}
 	
 	// Update is called once per frame
@@ -24,6 +28,8 @@ public class TileScript : MonoBehaviour {
 		if (TimeSinceStart > TimeToFlash) {
 			TimeSinceStart = -3f;
 			if (isOn) {
+//				source.Play ();
+				AudioSource.PlayClipAtPoint (source.clip, transform.position);
 				tile_renderer.material.color = Color.cyan;
 			} else {
 				tile_renderer.material.color = new Color (0.180f, 0.180f, 0.180f);
