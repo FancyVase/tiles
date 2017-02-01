@@ -30,9 +30,13 @@ public class TileScript : MonoBehaviour {
 			if (isOn) {
 //				source.Play ();
 				AudioSource.PlayClipAtPoint (source.clip, transform.position);
-				tile_renderer.material.color = Color.cyan;
+				// active on
+//				tile_renderer.material.color = Color.cyan;
+				tile_renderer.material.color = new Color (0.361f, 1f, 1f, 1f);
 			} else {
-				tile_renderer.material.color = new Color (0.180f, 0.180f, 0.180f);
+//				tile_renderer.material.color = new Color (0.180f, 0.180f, 0.180f);
+				// active off
+				tile_renderer.material.color = new Color (0.824f, 0.867f, 1f, 1f);
 			}
 			Invoke ("resetColor", 1 / 5f);
 		}
@@ -41,9 +45,13 @@ public class TileScript : MonoBehaviour {
 	void resetColor () {
 		if (tile_renderer != null) {
 			if (isOn) {
-				tile_renderer.material.color = Color.white;
+				// inactive on
+//				tile_renderer.material.color = Color.white;
+				tile_renderer.material.color = new Color (0.620f, 1f, 0.984f, 0.616f);
 			} else {
-				tile_renderer.material.color = new Color (0.196f, 0.196f, 0.196f);
+//				tile_renderer.material.color = new Color (0.196f, 0.196f, 0.196f);
+				// inactive off
+				tile_renderer.material.color = new Color (0.824f, 0.867f, 1f, 0.616f);
 			}
 		}
 	}
