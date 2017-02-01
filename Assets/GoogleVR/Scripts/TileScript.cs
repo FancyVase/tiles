@@ -15,7 +15,6 @@ public class TileScript : MonoBehaviour {
 		isOn = false;
 		TimeSinceStart = -col/5f;
 		TimeToFlash = 0f;
-//		StartCoroutine (PlayToneLoop ());
 		tile_renderer = GetComponent<MeshRenderer> ();
 	}
 	
@@ -42,38 +41,6 @@ public class TileScript : MonoBehaviour {
 			}
 		}
 	}
-	 
-//	IEnumerator PlayToneLoop() {
-//		yield return new WaitForSeconds(col/5f);
-//		while (true) {
-////			PlaySound ();
-//			if (isOn) {
-//				MeshRenderer my_renderer = GetComponent<MeshRenderer> ();
-//				if (my_renderer != null) {
-//					my_renderer.material.color = Color.cyan;
-//				}
-//				yield return new WaitForSeconds (1 / 5f);
-//				if (my_renderer != null) {
-//					my_renderer.material.color = Color.white;
-//				}
-//			} else {
-//				yield return new WaitForSeconds (1/5f);
-//			}
-//
-////			MeshRenderer my_renderer = GetComponent<MeshRenderer>();
-////			if (my_renderer != null) {
-////				my_renderer.material.color = Color.cyan;
-////			}
-////			yield return new WaitForSeconds (1/5f);
-////			if (my_renderer != null) {
-////				my_renderer.material.color = Color.white;
-////			}
-//			yield return new WaitForSeconds(3);
-//		}
-//	}
-//	public void playSound(int tone) {
-//		playSound (tone);
-//	}
 
 	public void onClick() {
 
